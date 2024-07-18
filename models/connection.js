@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = process.env.ConnectionString;
+const connectionString = process.env.CONNECTION_STRING;
 
 mongoose.set("strictQuery", true); // Remove Mongoose warning in console
 
