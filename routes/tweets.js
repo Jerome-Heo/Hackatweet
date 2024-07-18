@@ -29,7 +29,8 @@ router.post('/:token', (req,res)=> {
             const newTweet = new Tweet({
                     content: req.body.content,
                     date: new Date(),
-                    author: data.username,
+                    authorName: data.name,
+                    authorUsername: data.username, 
                     likedBy: [],
                     hashtag: {
                         hashtag: hashtags
