@@ -13,11 +13,11 @@ router.post('/signup', (req, res) => {
     res.json({ result: false, error: 'Missing or empty fields' });
     return;
   }
-  
+
   //Pas de user trouvé donc password hashé + token(32) 
 
-  User.findOne({ username: req.body.username }).then(data => {
 
+  User.findOne({ username: req.body.username }).then(data => {
     if (data === null) {
       const hash = bcrypt.hashSync(req.body.password, 10);
       const newUser = new User({
@@ -25,20 +25,23 @@ router.post('/signup', (req, res) => {
         username: req.body.username,
         password: hash,
         token: uid2(32),
-      });
 
-      //Création du user dans BDD ou message d'erreur s'il existe déjà
-
+      })
       newUser.save().then((newDoc) => {
         res.json({ result: true, token: newDoc.token, username: req.body.username });
       });
     } else {
-
+    
       res.json({ result: false, error: 'User already exists' });
     }
-  });
-});
+    }
+    )});
 
+  //Création du user dans BDD ou message d'erreur s'il existe déjà
+
+
+
+createUser();
 //Connexion d'un user déjà existant + vérif de la saisie. 
 
 router.post('/signin', (req, res) => {
