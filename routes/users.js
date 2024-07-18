@@ -21,6 +21,7 @@ router.post('/signup', (req, res) => {
     if (data === null) {
       const hash = bcrypt.hashSync(req.body.password, 10);
       const newUser = new User({
+        name: req.body.name,
         username: req.body.username,
         password: hash,
         token: uid2(32),
