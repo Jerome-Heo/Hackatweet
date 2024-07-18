@@ -10,7 +10,7 @@ const User = require('../models/users')
 router.get('/', (req,res) => {
     Tweet.find()
     .then(data => {
-        res.json({data})
+        res.json(data)
     })
 })
 
