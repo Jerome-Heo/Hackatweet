@@ -31,17 +31,17 @@ router.post('/signup', (req, res) => {
         res.json({ result: true, token: newDoc.token, username: req.body.username });
       });
     } else {
-    
+
       res.json({ result: false, error: 'User already exists' });
     }
-    }
-    )});
+  }
+  )
+});
 
-  //Création du user dans BDD ou message d'erreur s'il existe déjà
+//Création du user dans BDD ou message d'erreur s'il existe déjà
 
 
 
-createUser();
 //Connexion d'un user déjà existant + vérif de la saisie. 
 
 router.post('/signin', (req, res) => {
