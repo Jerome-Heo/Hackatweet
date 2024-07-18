@@ -8,7 +8,7 @@ const tweetSchema = mongoose.Schema({
     content: String,
     date: Date,
     author: String,
-    likedBy: {type : mongoose.Schema.Types.ObjectId, ref: 'users'},
+    likedBy: [{type : mongoose.Schema.Types.ObjectId, ref: 'users'}],
     hashtag: hashtagSchema,
 })
 
