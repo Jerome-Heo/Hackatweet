@@ -7,6 +7,13 @@ const Tweet = require('../models/tweets')
 const User = require('../models/users')
 
 
+router.get('/', (req,res) => {
+    Tweet.find()
+    .then(data => {
+        res.json({data})
+    })
+})
+
 
 router.post('/:token', (req,res)=> {
     if(!checkBody(req.body, ['content'])){
