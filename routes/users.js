@@ -40,8 +40,6 @@ router.post('/signup', (req, res) => {
 
 //Création du user dans BDD ou message d'erreur s'il existe déjà
 
-
-
 //Connexion d'un user déjà existant + vérif de la saisie. 
 
 router.post('/signin', (req, res) => {
