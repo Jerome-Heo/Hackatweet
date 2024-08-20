@@ -1,3 +1,6 @@
+# misc
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -59,6 +62,3 @@ typings/
 
 # next.js build output
 .next
-
-# Yarn Integrity file
-yarn.lock
